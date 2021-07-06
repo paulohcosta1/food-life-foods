@@ -1,10 +1,10 @@
-package com.foodlife.foodsservice;
+package com.foodlife.foods;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class FoodsServicesApplicationTests {
+class FoodsApplicationTests {
 
 	@Test
 	void contextLoads() {

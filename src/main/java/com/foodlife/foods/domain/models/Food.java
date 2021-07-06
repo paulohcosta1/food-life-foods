@@ -1,24 +1,25 @@
-package com.foodlife.foodsservice.domain.models;
+package com.foodlife.foods.domain.models;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document(collection = "paco-foods-2020")
 public class Food {
     @Id
     private String id;
     private String name;
     private Number quantity;
     private Number carb;
-    private Number prot;
+    private Number protein;
     private Number fat;
-    private Number fiber;
 
-    public Food(String name, Number quantity, Number carb, Number prot, Number fat, Number fiber) {
+    public Food(String id, String name, Number quantity, Number carb, Number protein, Number fat) {
+        this.id = id;
         this.name = name;
         this.quantity = quantity;
         this.carb = carb;
-        this.prot = prot;
+        this.protein = protein;
         this.fat = fat;
-        this.fiber = fiber;
     }
 
     public String getName() {
@@ -27,6 +28,14 @@ public class Food {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public Number getQuantity() {
@@ -45,12 +54,12 @@ public class Food {
         this.carb = carb;
     }
 
-    public Number getProt() {
-        return prot;
+    public Number getProtein() {
+        return protein;
     }
 
-    public void setProt(Number prot) {
-        this.prot = prot;
+    public void setProtein(Number protein) {
+        this.protein = protein;
     }
 
     public Number getFat() {
@@ -61,11 +70,4 @@ public class Food {
         this.fat = fat;
     }
 
-    public Number getFiber() {
-        return fiber;
-    }
-
-    public void setFiber(Number fiber) {
-        this.fiber = fiber;
-    }
 }
